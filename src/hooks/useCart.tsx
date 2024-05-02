@@ -1,5 +1,4 @@
 import { CartProductType } from "@/components/products/ProductDetails";
-import { product } from "@/helpers/product";
 import {
   createContext,
   useCallback,
