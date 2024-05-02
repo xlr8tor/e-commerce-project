@@ -1,0 +1,138 @@
+@import "../../../styles/index";
+
+.wrapper {
+  width: inherit;
+  max-width: map-get($sizes, "sizes", "7xl");
+  margin: 4.5rem auto;
+
+  .footer {
+    background-color: map-get($map: $colors, $key: "dark-gray");
+    border-radius: map-get($map: $border-radius, $key: "3xl");
+    padding: map-get($map: $space, $key: 10);
+    color: map-get($map: $colors, $key: "white");
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: map-get($map: $space, $key: 8);
+
+      .footer__top-features-list,
+      .footer__top-company-list,
+      .contact-us-list,
+      .instagram-grid {
+        display: flex;
+        flex-direction: column;
+        gap: map-get($map: $space, $key: 2);
+      }
+
+      .footer__top-features-list__item:first-child,
+      .footer__top-company-list__item:first-child,
+      .contact-us-list__item:first-child,
+      .instagram-grid__item:first-child {
+        font-size: map-get($map: $font-sizes, $key: "lg");
+        font-weight: map-get($map: $fontWeights, $key: "semibold");
+        margin-bottom: map-get($map: $space, $key: 2);
+      }
+
+      .instagram-grid__item:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: map-get($map: $space, $key: 2);
+      }
+
+      .instagram-grid__item:nth-child(2) img {
+        width: 25%;
+      }
+
+      .contact-us-list__item:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: map-get($map: $space, $key: 2);
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top: $base-border-thickness solid
+        map-get($map: $colors, $key: "gray-light");
+      margin-top: map-get($map: $space, $key: 16);
+      padding-top: map-get($map: $space, $key: 6);
+
+      &-logo {
+        width: 140px;
+        height: 140px;
+      }
+
+      &-note {
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .socials-list {
+        width: 100%;
+        max-width: 250px;
+        display: flex;
+        justify-content: space-between;
+        gap: map-get($map: $space, $key: 4);
+        margin-top: map-get($map: $space, $key: 8);
+
+        &__link {
+          display: flex;
+          padding: map-get($map: $space, $key: 2);
+          background-color: map-get($map: $colors, $key: "white");
+          border-radius: map-get($map: $border-radius, $key: "full");
+          transition: background-color 0.5s ease-in-out;
+
+          &-img {
+            width: 25px;
+            height: 25px;
+          }
+
+          &:hover {
+            background-color: map-get($map: $colors, $key: "mustard");
+            color: map-get($map: $colors, $key: "white");
+          }
+        }
+      }
+
+      .policies-list {
+        text-align: center;
+        margin-top: map-get($map: $space, $key: 10);
+        display: flex;
+        flex-direction: column;
+        gap: map-get($map: $space, $key: 6);
+      }
+
+      .rights-reserved {
+        text-align: center;
+        margin-top: map-get($map: $space, $key: 12);
+      }
+
+      @include md {
+        .policies-list {
+          flex-direction: row;
+        }
+      }
+    }
+
+    @include md {
+      &__top {
+        flex-direction: row;
+      }
+    }
+
+    @include lg {
+      padding: map-get($map: $space, $key: 16);
+      &__top {
+        .instagram-grid {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

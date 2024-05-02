@@ -1,0 +1,15 @@
+@import "../../../styles/index.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: map-get($map: $space, $key: 16) map-get($map: $space, $key: 4)
+    map-get($map: $space, $key: 4) map-get($map: $space, $key: 4);
+
+  @include lg {
+    padding: map-get($map: $space, $key: 12);
+  }
+}

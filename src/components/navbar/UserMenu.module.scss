@@ -1,0 +1,49 @@
+@import "../../../styles/index.scss";
+
+.avatar {
+  position: relative;
+
+  &__wrap {
+    padding: map-get($map: $space, $key: 2);
+    display: flex;
+    align-items: center;
+    gap: map-get($map: $space, $key: 1);
+    cursor: pointer;
+    background-color: map-get($colors, "off-white");
+    border-radius: map-get($map: $border-radius, $key: "full");
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: map-get($map: $colors, $key: "mustard");
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    background-color: map-get($map: $colors, $key: "off-white");
+    border-radius: map-get($map: $border-radius, $key: "lg");
+    width: 170px;
+    overflow: hidden;
+    top: 70px;
+    right: 0;
+    box-shadow: -2px 15px 21px -16px rgba(0, 0, 0, 0.35);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 50;
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin: 0 !important;
+        color: #1c1c1c;
+
+        li {
+          font-size: 15px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}

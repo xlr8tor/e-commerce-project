@@ -1,0 +1,10 @@
+@import "../../styles/index.scss";
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: map-get($map: $space, $key: 1);
+  padding: map-get($map: $space, $key: 2);
+  border-radius: 0.25rem;
+  height: 20px;
+}

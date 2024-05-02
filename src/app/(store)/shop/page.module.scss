@@ -1,0 +1,140 @@
+@import "../../../../styles/index.scss";
+
+.wrapper {
+  .discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: map-get($map: $space, $key: 4);
+
+    &__item {
+      border-radius: map-get($map: $border-radius, $key: "3xl");
+      transition: box-shadow 0.5s ease-in-out;
+      cursor: pointer;
+
+      .overflow-control {
+        overflow: hidden;
+        border-radius: map-get($map: $border-radius, $key: "3xl");
+        position: relative;
+
+        #burst-8 {
+          background: map-get($map: $colors, $key: "mustard");
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          border-radius: 10px;
+          z-index: 10;
+          padding: 0.5rem;
+        }
+
+        #burst-8,
+        object {
+          cursor: pointer;
+        }
+      }
+
+      &--img {
+        height: auto;
+        aspect-ratio: 4/4;
+        transition: transform 0.5s, filter 1s ease-in-out;
+        object-fit: cover;
+      }
+
+      &:hover > .overflow-control > img,
+      &:focus > .overflow-control > img {
+        transform: scale(1.1);
+      }
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 16px 36px -19px rgba(0, 0, 0, 0.3);
+
+        .btn-hover {
+          background-color: map-get($map: $colors, $key: "mustard");
+          border-color: map-get($map: $colors, $key: "mustard");
+        }
+      }
+
+      &--content {
+        padding: map-get($map: $space, $key: 4);
+      }
+
+      &--title {
+        font-size: map-get($map: $font-sizes, $key: "lg");
+        padding-bottom: map-get($map: $space, $key: 4);
+      }
+
+      &--desc {
+        font-size: map-get($map: $font-sizes, $key: "sm");
+        padding: map-get($map: $space, $key: 2) 0;
+      }
+
+      .rating__wrap {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: map-get($map: $space, $key: 2);
+
+        .rating {
+          display: flex;
+          gap: map-get($map: $space, $key: 1);
+
+          > object {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .discover-grid__prices {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .price-group {
+          display: flex;
+          align-items: center;
+          gap: map-get($map: $space, $key: 4);
+
+          .price {
+            font-size: map-get($map: $font-sizes, $key: "xl");
+          }
+
+          .discount-price {
+            color: map-get($map: $colors, $key: "gray-light");
+          }
+
+          .strike {
+            position: relative;
+            display: inline-block;
+          }
+          .strike::before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            right: 0;
+            top: 50%;
+          }
+          .strike::before {
+            border-bottom: 2px solid map-get($map: $colors, $key: "error");
+            -webkit-transform: skewY(-6deg);
+            transform: skewY(-6deg);
+          }
+        }
+      }
+    }
+
+    @include sm {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      margin-top: map-get($map: $space, $key: 16);
+    }
+  }
+}
+
+.load {
+  display: block;
+  margin: map-get($map: $space, $key: 16) auto;
+}

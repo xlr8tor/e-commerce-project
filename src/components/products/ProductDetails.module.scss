@@ -1,0 +1,288 @@
+@import "../../../styles/index.scss";
+
+.container {
+  .wrapper {
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($map: $space, $key: 8);
+
+      &-main {
+        display: flex;
+        flex-direction: column;
+        gap: map-get($map: $space, $key: 8);
+
+        .col1 {
+          .overflow-control {
+            overflow: hidden;
+            border-radius: map-get($map: $border-radius, $key: "3xl");
+            aspect-ratio: 4/4;
+            position: relative;
+          }
+
+          .product-details-img {
+            transition: transform 0.5s, filter 1s ease-in-out;
+            object-fit: cover;
+          }
+        }
+        .col2 {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .price {
+            font-size: map-get($map: $font-sizes, $key: "2xl");
+          }
+
+          .added {
+            display: flex;
+            align-items: center;
+            gap: map-get($map: $space, $key: 1);
+          }
+        }
+
+        .pill {
+          width: max-content;
+          background-color: map-get($map: $colors, $key: "mustard");
+          text-transform: uppercase;
+          padding: map-get($map: $space, $key: 1) map-get($map: $space, $key: 4);
+          border-radius: map-get($map: $border-radius, $key: "lg");
+        }
+
+        .title {
+          font-size: map-get($map: $font-sizes, $key: "3xl");
+          line-height: map-get($map: $lineHeights, $key: "none");
+        }
+
+        .select-color,
+        .select-size,
+        .description-title {
+          text-transform: uppercase;
+        }
+
+        .description-title {
+          margin-bottom: map-get($map: $space, $key: 1);
+        }
+
+        .rating__wrap {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding-bottom: map-get($map: $space, $key: 2);
+          gap: map-get($map: $space, $key: 4);
+
+          .rating {
+            display: flex;
+            gap: map-get($map: $space, $key: 1);
+
+            > object {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          .reviews {
+            color: green;
+          }
+        }
+      }
+
+      &-aside {
+        border-radius: map-get($map: $border-radius, $key: "3xl");
+        overflow: hidden;
+        background-color: map-get($map: $colors, $key: "white");
+        box-shadow: 0px 0px 46px -19px rgba(0, 0, 0, 0.3);
+
+        &__head {
+          padding: map-get($map: $space, $key: 6);
+          font-size: map-get($map: $font-sizes, $key: "xl");
+        }
+
+        &__body {
+          padding: map-get($map: $space, $key: 6);
+          border-top: $base-border-thickness solid
+            map-get($map: $colors, $key: "off-white");
+
+          .quantity-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+
+            .quantity-text {
+              font-size: map-get($map: $font-sizes, $key: "lg");
+            }
+
+            .input-number__wrap {
+              background-color: map-get($map: $colors, $key: "off-white");
+              padding: map-get($map: $space, $key: 1);
+            }
+
+            input[type="number"] {
+              -webkit-appearance: textfield;
+              -moz-appearance: textfield;
+              appearance: textfield;
+            }
+
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+            }
+
+            .number-input {
+              display: inline-flex;
+              background-color: white;
+            }
+
+            .number-input button {
+              outline: none;
+
+              background-color: transparent;
+              border: none;
+              align-items: center;
+              justify-content: center;
+              width: 2rem;
+              height: 2rem;
+              cursor: pointer;
+              margin: 0;
+              position: relative;
+            }
+
+            .number-input button:after {
+              display: inline-block;
+              position: absolute;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              content: "";
+              transform: translate(-50%, -50%) rotate(180deg);
+            }
+
+            .number-input button.plus:after {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            .number-input input[type="number"] {
+              font-family: sans-serif;
+              max-width: 3rem;
+
+              border: none;
+              border-width: 0 2px;
+              font-size: 1rem;
+              height: 2rem;
+              text-align: center;
+              background-color: map-get($map: $colors, $key: "off-white");
+            }
+          }
+
+          .product-details-aside__item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+          }
+
+          .form-control {
+            label[for="notes"] {
+              display: block;
+              font-size: map-get($map: $font-sizes, $key: "lg");
+            }
+
+            textarea {
+              width: 100%;
+              border-radius: map-get($map: $border-radius, $key: "lg");
+              padding: map-get($map: $space, $key: 4);
+              border: $base-border-thickness solid
+                map-get($map: $colors, $key: "off-white");
+            }
+          }
+
+          .coupon {
+            display: flex;
+            justify-content: space-between;
+            border: $base-border-thickness solid
+              map-get($map: $colors, $key: "mustard");
+            border-radius: map-get($map: $border-radius, $key: "lg");
+            padding: map-get($map: $space, $key: 4);
+            text-transform: uppercase;
+            background-color: map-get($map: $colors, $key: "mustard-light2");
+            color: map-get($map: $colors, $key: "mustard");
+          }
+
+          .form-control + .coupon {
+            margin-top: map-get($map: $space, $key: 4);
+          }
+        }
+        .total-wrap {
+          display: flex;
+          padding: map-get($map: $space, $key: 6);
+          justify-content: space-between;
+          font-size: map-get($map: $font-sizes, $key: "lg");
+          border-top: $base-border-thickness solid
+            map-get($map: $colors, $key: "off-white");
+        }
+
+        .btn-group {
+          display: flex;
+          flex-direction: column;
+          gap: map-get($map: $space, $key: 4);
+          padding: map-get($map: $space, $key: 6);
+          border-top: $base-border-thickness solid
+            map-get($map: $colors, $key: "off-white");
+
+          button:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: map-get($map: $space, $key: 2);
+          }
+        }
+      }
+
+      @include lg {
+        flex-direction: row;
+        gap: map-get($map: $space, $key: 8);
+
+        &-main {
+          flex-direction: row;
+          gap: map-get($map: $space, $key: 8);
+
+          .col1 {
+            flex: 1.5;
+          }
+          .col2 {
+            flex: 2;
+          }
+        }
+      }
+
+      &-aside {
+        flex: 1;
+      }
+      &-main {
+        flex: 2;
+      }
+    }
+  }
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $space, $key: 4);
+  margin-top: map-get($map: $space, $key: 20);
+
+  .width {
+    max-width: 300px;
+
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: map-get($map: $space, $key: 2);
+    }
+  }
+}
+
+.add-rating {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $space, $key: 2);
+}

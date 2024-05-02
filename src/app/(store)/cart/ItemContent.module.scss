@@ -1,0 +1,51 @@
+@import "../../../../styles/index.scss";
+
+.item-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: map-get($map: $space, $key: 4);
+  align-items: center;
+  font-size: map-get($map: $font-sizes, $key: "xs");
+  border-top: $base-border-thickness solid
+    map-get($map: $colors, $key: "off-white");
+
+  a {
+    color: map-get($map: $colors, $key: "dark-gray");
+  }
+
+  & > div:first-child {
+    grid-column: 1 / span 2;
+    gap: map-get($map: $space, $key: 4);
+    display: flex;
+  }
+
+  & > div:not(:last-child) {
+    justify-self: start;
+  }
+
+  & > div:last-child {
+    justify-self: end;
+  }
+
+  .img-wrapper {
+    position: relative;
+    aspect-ratio: 4/4;
+    width: 80px;
+    border-radius: map-get($map: $border-radius, $key: "lg");
+    overflow: hidden;
+  }
+
+  .delete {
+    @include btn(
+      map-get($map: $colors, $key: "alert"),
+      darken(map-get($map: $colors, $key: "alert"), 5)
+    ) {
+      width: initial;
+      font-size: map-get($map: $font-sizes, $key: "sm");
+    }
+  }
+
+  @include md {
+    font-size: map-get($map: $font-sizes, $key: "sm");
+  }
+}

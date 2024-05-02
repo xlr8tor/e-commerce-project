@@ -1,0 +1,58 @@
+@import "../../../styles/index";
+
+.nav {
+  width: 100%;
+  border-bottom: $base-border-thickness solid
+    map-get($map: $colors, $key: "gray-light");
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  top: 5rem;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: map-get($map: $space, $key: 8);
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  @include md {
+    .flex {
+      justify-content: center;
+      gap: map-get($map: $space, $key: 12);
+    }
+  }
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: map-get($map: $space, $key: 1);
+  padding: map-get($map: $space, $key: 2);
+  border-bottom: 2px solid map-get($map: $colors, $key: "none");
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($map: $colors, $key: "slate-800");
+  }
+
+  .label {
+    overflow-wrap: normal;
+    word-break: normal;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.selected {
+  border-bottom: 2px solid map-get($map: $colors, $key: "dark-gray");
+  color: map-get($map: $colors, $key: "slate-800");
+}
+
+.not-selected {
+  border-bottom: 2px solid map-get($map: $colors, $key: "none");
+  color: map-get($map: $colors, $key: "slate-500");
+}

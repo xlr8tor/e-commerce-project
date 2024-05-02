@@ -1,0 +1,86 @@
+@import "../../../../styles/index.scss";
+
+.wrapper {
+  .cart-title {
+    text-align: center;
+  }
+
+  .cart-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: map-get($map: $space, $key: 4);
+
+    div:first-child {
+      grid-column: 1 / span 2;
+      display: flex;
+    }
+
+    div:not(:last-child) {
+      justify-self: start;
+    }
+
+    div:last-child {
+      justify-self: end;
+    }
+  }
+
+  .cart-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: map-get($map: $space, $key: 4);
+    border-top: $base-border-thickness solid
+      map-get($map: $colors, $key: "off-white");
+
+    .clear {
+      @include btn(
+        map-get($map: $colors, $key: "alert"),
+        darken(map-get($map: $colors, $key: "alert"), 5)
+      ) {
+        font-size: map-get($map: $font-sizes, $key: "md");
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($map: $space, $key: 1);
+      align-items: flex-start;
+
+      .row-1 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .row-1 + p {
+        color: map-get($map: $colors, $key: "gray");
+      }
+
+      .link {
+        display: flex;
+        align-items: center;
+        gap: map-get($map: $space, $key: 1);
+        color: map-get($map: $colors, $key: "gray");
+      }
+    }
+  }
+
+  .empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: map-get($map: $space, $key: 2);
+    }
+  }
+}

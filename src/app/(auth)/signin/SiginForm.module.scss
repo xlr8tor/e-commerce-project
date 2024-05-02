@@ -1,0 +1,37 @@
+@import "../../../../styles/index.scss";
+
+.form-section__wrap {
+  width: 100%;
+
+  .header {
+    text-align: center;
+  }
+
+  button:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: map-get($map: $space, $key: 1);
+  }
+
+  @include lg {
+    max-width: 450px;
+  }
+}
+
+.form {
+  width: 100%;
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  .signup-options {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hover-underline-animation {
+  @include hover-underline-animation(map-get($colors, "purple-1"));
+}

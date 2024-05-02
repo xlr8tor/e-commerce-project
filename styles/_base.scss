@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: map-get($map: $space, $key: 16) map-get($map: $space, $key: 4)
+    map-get($map: $space, $key: 4) map-get($map: $space, $key: 4);
+
+  //   @include lg {
+  //     padding: map-get($map: $space, $key: 12);
+  //   }
+}
+
+.wrapper {
+  width: inherit;
+  max-width: map-get($sizes, "sizes", "7xl");
+  margin: 4.5rem auto;
+}

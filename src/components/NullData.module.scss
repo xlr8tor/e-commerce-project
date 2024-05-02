@@ -1,0 +1,14 @@
+@import "../../styles/index.scss";
+
+.data {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: map-get($map: $font-sizes, $key: "xl");
+  height: 50vh;
+
+  @include md {
+    font-size: map-get($map: $font-sizes, $key: "2xl");
+  }
+}

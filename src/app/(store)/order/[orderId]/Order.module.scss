@@ -1,0 +1,96 @@
+@import "../../../../../styles/index.scss";
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $space, $key: 2);
+  margin: 0 auto;
+
+  .payment {
+    display: flex;
+    align-items: center;
+    gap: map-get($map: $space, $key: 2);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: map-get($map: $space, $key: 4);
+    align-items: center;
+    padding-bottom: map-get($map: $space, $key: 2);
+    font-size: map-get($map: $font-sizes, $key: "font-xs");
+
+    .start {
+      justify-self: start;
+    }
+
+    .center {
+      justify-self: center;
+    }
+
+    .end {
+      justify-self: end;
+    }
+
+    .col-span {
+      grid-column: span 2 / span 2;
+    }
+  }
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: map-get($map: $space, $key: 4);
+  font-size: map-get($map: $font-sizes, $key: "font-xs");
+  align-items: center;
+  border-top: $base-border-thickness solid
+    map-get($map: $colors, $key: "slate-200");
+
+  &__wrap {
+    grid-column: 1 / span 2;
+    justify-self: start;
+    display: flex;
+    gap: map-get($map: $space, $key: 2);
+  }
+
+  &-img__wrap {
+    position: relative;
+    width: 70px;
+    aspect-ratio: 4/4;
+
+    .img {
+      object-fit: contain;
+    }
+  }
+
+  &-txt__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $space, $key: 1);
+  }
+
+  @include md {
+    font-size: map-get($map: $font-sizes, $key: "font-sm");
+
+    &__wrap {
+      gap: map-get($map: $space, $key: 4);
+    }
+  }
+}
+
+.start {
+  justify-self: start;
+}
+
+.center {
+  justify-self: center;
+}
+
+.end {
+  justify-self: end;
+}
+
+.col-span {
+  grid-column: span 2 / span 2;
+}

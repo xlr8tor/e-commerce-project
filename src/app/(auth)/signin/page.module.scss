@@ -1,0 +1,162 @@
+@use "sass:map";
+@import "../../../../styles/index.scss";
+
+.signup--container {
+  display: flex;
+  width: 100%;
+
+  background: linear-gradient(black, black),
+    url("/img/background_signup.jpg") no-repeat center;
+  background-size: cover;
+  background-blend-mode: saturation;
+
+  .signup-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: map-get($map: $border-radius, $key: "3xl");
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+
+    .header {
+      text-align: center;
+    }
+
+    .signup--cutout,
+    .signup--form {
+      flex: 1;
+      border-radius: map-get($map: $border-radius, $key: "sm");
+      height: 100%;
+    }
+
+    .signup--cutout {
+      display: flex;
+      width: 100%;
+
+      &__content {
+        display: flex;
+        align-items: flex-end;
+        background: url("/img/DrawKit-Vector-Illustration-ecommerce-02.svg")
+          no-repeat;
+        background-size: cover;
+        width: 100%;
+        border-radius: map-get($map: $border-radius, $key: "2.5xl");
+        border: 1px solid black;
+
+        @include lg {
+          background: url("/img/DrawKit-Vector-Illustration-ecommerce-02.svg")
+            repeat;
+          background-size: cover;
+          background-position: center -90px;
+        }
+
+        .tagline {
+          line-height: 1.25;
+          color: #1a202c;
+        }
+      }
+    }
+
+    .signup--form {
+      width: inherit;
+
+      &__wrap {
+        display: flex;
+        height: inherit;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .form-section__wrap {
+          width: 100%;
+
+          button:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: map-get($map: $space, $key: 1);
+          }
+        }
+
+        div:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include lg {
+    height: 100vh;
+    align-items: center;
+
+    .signup-wrap {
+      flex-direction: row;
+      height: 700px;
+      width: 92%;
+      max-width: 1325px;
+
+      .signup--form {
+        .form-section__wrap {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+}
+
+.form {
+  width: 100%;
+
+  .form-control {
+    position: relative;
+
+    label,
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      font-size: map-get($map: $font-sizes, $key: "sm");
+    }
+
+    input:not([type="checkbox"]) {
+      border: none;
+      background-color: map-get($map: $colors, $key: "bg-light");
+      padding: map-get($map: $space, $key: 2);
+      border-radius: map-get($map: $border-radius, $key: "xl");
+    }
+
+    &.error {
+      input {
+        border: $base-border-thickness solid #c53030;
+      }
+
+      &::after {
+        content: url("/img/circle-exclamation.svg");
+        position: absolute;
+        width: 24px;
+        right: 10px;
+        top: 50%;
+        transform: scale(70%);
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  .signup-options {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hover-underline-animation {
+  @include hover-underline-animation(map-get($colors, "purple-1"));
+}

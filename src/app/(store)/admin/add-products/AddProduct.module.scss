@@ -1,0 +1,23 @@
+@import "../../../../../styles/index.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-height: 50vh;
+  overflow-y: auto;
+  gap: map-get($map: $space, $key: 3);
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: map-get($map: $space, $key: 1);
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

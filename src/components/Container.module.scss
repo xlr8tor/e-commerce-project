@@ -1,0 +1,11 @@
+@import "../../styles/index.scss";
+
+.container1 {
+  max-width: 1920px;
+  margin: 0 auto;
+  // padding: 0 map-get($map: $space, $key: 4);
+
+  @include md {
+    padding: 0 map-get($map: $space, $key: 4);
+  }
+}

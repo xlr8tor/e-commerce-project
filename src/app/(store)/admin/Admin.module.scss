@@ -1,0 +1,33 @@
+@import "../../../../styles/index.scss";
+
+.summary {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: map-get($map: $space, $key: 3);
+    max-height: 50vh;
+    overflow-y: auto;
+
+    .key {
+      border-radius: map-get($map: $border-radius, $key: "xl");
+      border: $base-border-thickness solid
+        map-get($map: $colors, $key: "slate-200");
+      padding: map-get($map: $space, $key: 4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: map-get($map: $space, $key: 3);
+    }
+  }
+}
+
+.bar {
+  max-width: 1150px;
+  margin: map-get($map: $space, $key: 4) auto;
+  width: 100%;
+  height: auto;
+  position: relative;
+}

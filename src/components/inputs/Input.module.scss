@@ -1,0 +1,111 @@
+@import "../../../styles/index.scss";
+
+.form-control {
+  position: relative;
+
+  label,
+  .input-field {
+    display: block;
+    width: 100%;
+    font-size: map-get($map: $font-sizes, $key: "sm");
+  }
+
+  .input-field {
+    border: $base-border-thickness solid map-get($map: $colors, $key: "white");
+    background-color: map-get($map: $colors, $key: "bg-light");
+    padding: map-get($map: $space, $key: 2);
+    border-radius: map-get($map: $border-radius, $key: "xl");
+    outline: none;
+  }
+
+  input:disabled {
+    opacity: 7;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    input {
+      border: $base-border-thickness solid #c53030;
+    }
+
+    &::after {
+      content: url("/img/circle-exclamation.svg");
+      position: absolute;
+      width: 24px;
+      right: 10px;
+      top: 50%;
+      transform: scale(70%);
+    }
+  }
+
+  .text-area {
+    max-height: 150px;
+    min-height: 150px;
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: map-get($map: $space, $key: 2);
+  padding: map-get($map: $space, $key: 4);
+  border-radius: map-get($map: $border-radius, $key: "2xl");
+  border: 2px solid transparent;
+
+  &:hover {
+    border-color: map-get($map: $colors, $key: "slate-500");
+  }
+}
+
+.selected {
+  border-color: map-get($map: $colors, $key: "slate-500");
+}
+
+.not-selected {
+  border-color: map-get($map: $colors, $key: "slate-200");
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  overflow-y: auto;
+  border-bottom: $base-border-thickness solid
+    map-get($map: $colors, $key: "slate-200");
+
+  .flex {
+    display: flex;
+    gap: map-get($map: $space, $key: 2);
+    align-items: center;
+    height: 60px;
+  }
+
+  .col-span-2 {
+    // grid-column: span 2 / span 2;
+    text-align: center;
+  }
+
+  .display-image {
+    display: flex;
+    gap: map-get($map: $space, $key: 2);
+    align-items: center;
+    justify-content: space-between;
+    font-size: map-get($map: $font-sizes, $key: "font-sm");
+    // grid-column: span 2 / span 2;
+
+    .width {
+      width: 70px;
+    }
+  }
+}
+
+.select-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px dashed map-get($map: $colors, $key: "slate-400");
+  color: map-get($map: $colors, $key: "slate-400");
+}

@@ -1,0 +1,113 @@
+@use "sass:map";
+
+@mixin btn($bg-color: #e2e2e2, $hover: none) {
+  position: relative;
+  width: 100%;
+  font-size: map-get($map: $font-sizes, $key: "md");
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $bg-color;
+  color: map-get($map: $colors, $key: "white");
+  outline: none;
+  border: none;
+  padding: map-get($map: $space, $key: 2);
+  border-radius: map-get($map: $border-radius, $key: "xl");
+  transition: all 0.5s ease-in-out;
+  @content;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+@mixin btn-outline($bg-color, $hover) {
+  @include btn($bg-color, $hover);
+  border: $base-border-thickness solid map-get($map: $colors, $key: "black");
+  color: map-get($map: $colors, $key: "black");
+  @content;
+  &:hover {
+    background-color: $bg-color;
+    border-color: $hover;
+    color: $hover;
+  }
+}
+
+.btn {
+  @include btn(
+    map-get($map: $colors, $key: "black"),
+    map-get($map: $colors, $key: "purple")
+  );
+}
+
+.btn-outline {
+  @include btn-outline(
+    map-get($map: $colors, $key: "none"),
+    map-get($map: $colors, $key: "purple")
+  );
+}
+
+.btn-icon {
+  @include btn-outline(
+    map-get($map: $colors, $key: "white"),
+    map-get($map: $colors, $key: "purple")
+  );
+}
+
+.btn-default {
+  @include btn(map-get($colors, "off-white"), map-get($colors, "mustard"));
+  width: map-get($sizes, "sizes", space, 16);
+  height: map-get($sizes, "sizes", space, 16);
+  width: max-content;
+  color: #1c1c1c;
+  padding: 1rem 2.5rem;
+}
+
+.btn-default-outline {
+  @include btn-outline(map-get($colors, "none"), map-get($colors, "white"));
+  padding: 1rem 2.5rem;
+  color: map-get($colors, "white");
+  border: $base-border-thickness solid map-get($map: $colors, $key: "white");
+}
+
+.btn-hover {
+  @include btn-outline(
+    map-get($map: $colors, $key: "none"),
+    map-get($map: $colors, $key: "mustard")
+  );
+  max-width: 120px;
+  &:hover {
+    background-color: map-get($map: $colors, $key: "mustard");
+    border-color: #1c1c1c;
+    color: #1c1c1c;
+  }
+}
+
+.btn-border-full {
+  border-radius: map-get($map: $border-radius, $key: "full");
+}
+
+.btn-default-hover {
+  &:hover {
+    background-color: #1c1c1c;
+    color: map-get($map: $colors, $key: "mustard");
+  }
+}
+
+.w-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.padded {
+  padding: 1rem 2.5rem;
+  height: 4rem;
+}
+
+.active {
+  background-color: map-get($colors, "mustard");
+}
+
+.active-black {
+  background-color: #1c1c1c;
+  color: map-get($map: $colors, $key: "mustard");
+}
