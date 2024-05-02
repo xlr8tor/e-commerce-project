@@ -143,7 +143,7 @@ const SignupForm = () => {
               className={`${styles["btn-icon"]} ${styles["mt-2"]}`}
               type="button"
               onClick={() => {
-                signIn("google");
+                signIn("google", { redirect: true, callbackUrl: "/" });
               }}
             >
               <Image
@@ -163,7 +163,7 @@ const SignupForm = () => {
         >
           Already have an account?{" "}
           <Link className={styles["hover-underline-animation"]} href="/signin">
-            Sign In
+            Sign Up
           </Link>
         </p>
         <p

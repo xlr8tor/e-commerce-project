@@ -71,7 +71,6 @@ const SigninForm: React.FC<SigninFormProps> = ({ currentUser }) => {
         </div>
         <form
           className={`${styles["form"]} ${styles["mt-7"]}`}
-          action="/"
           method="POST"
           onSubmit={handleSubmit(onSubmit)}
         >
@@ -114,7 +113,7 @@ const SigninForm: React.FC<SigninFormProps> = ({ currentUser }) => {
               className={`${styles["btn-icon"]} ${styles["mt-2"]}`}
               type="button"
               onClick={() => {
-                signIn("google");
+                signIn("google", { redirect: true, callbackUrl: "/" });
               }}
             >
               <Image
@@ -151,84 +150,3 @@ const SigninForm: React.FC<SigninFormProps> = ({ currentUser }) => {
 };
 
 export default SigninForm;
-
-{
-  /* <div className={styles["form-section__wrap"]}>
-<div className={styles["header"]}>
-  <h2
-    className={`${Bodoni.className} ${styles.title} ${styles["font-4xl"]}`}
-  >
-    Welcome Back
-  </h2>
-  <h3
-    className={`${styles["fw-light"]} ${styles.caption} ${styles["font-sm"]}`}
-  >
-    Enter your email and password to access your account
-  </h3>
-</div>
-<form
-  className={`${styles["form"]} ${styles["mt-7"]}`}
-  action="/"
-  method="POST"
-  onSubmit={handleSignIn}
->
-  <div className={styles["form-control"]}>
-    <label htmlFor="email">Email</label>
-    <input
-      className={styles["mt-1"]}
-      id="email"
-      name="email"
-      type="email"
-      value={user.email}
-      onChange={(e) => {
-        setUser({ ...user, email: e.target.value });
-      }}
-      placeholder="Enter your email"
-    />
-  </div>
-  <div className={`${styles["form-control"]} ${styles["mt-4"]}`}>
-    <label htmlFor="password">Password</label>
-    <input
-      className={styles["mt-1"]}
-      type="password"
-      id="password"
-      name="password"
-      value={user.password}
-      onChange={(e) => {
-        setUser({ ...user, password: e.target.value });
-      }}
-      placeholder="Enter your password"
-    />
-  </div>
-
-  <div
-    className={`${styles["signup-options"]} ${styles["font-sm"]} ${styles["mt-2"]}`}
-  >
-    <div className={styles["remember-me"]}>
-      <input type="checkbox" id="remember-me" />
-      <label htmlFor="remember-me"> Remember me</label>
-    </div>
-    <a className={styles["hover-underline-animation"]} href="#">
-      Forgot Password
-    </a>
-  </div>
-  <div className={`${styles["btn-group"]} ${styles["mt-8"]}`}>
-    <button className={styles.btn} type="submit">
-      Sign In
-    </button>
-    <button
-      className={`${styles["btn-icon"]} ${styles["mt-2"]}`}
-      type="button"
-    >
-      <Image
-        src="/img/google.svg"
-        alt="google icon"
-        width={25}
-        height={25}
-      />
-      Sign In with Google
-    </button>
-  </div>
-</form>
-</div> */
-}
