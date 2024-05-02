@@ -1,7 +1,6 @@
-import { buffer } from "micro";
-import { NextApiRequest, NextApiResponse } from "next";
 import { headers } from "next/headers";
 import Stripe from "stripe";
+import prisma from "@/libs/prismadb";
 
 export const dynamic = "force-dynamic";
 
