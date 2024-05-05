@@ -85,7 +85,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             className={`${card["btn-hover"]} ${card["fw-semibold"]}`}
             onClick={(e) => {
               e.stopPropagation();
-              handleAddProductToCart(cartProduct);
+              handleAddProductToCart({
+                ...cartProduct,
+                price: cartProduct.price - 3.99 - cartProduct.price * 0.1,
+              });
             }}
             disabled={isProductInCart}
             style={{ cursor: isProductInCart ? "not-allowed" : "pointer" }}

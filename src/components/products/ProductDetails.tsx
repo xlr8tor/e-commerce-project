@@ -15,8 +15,6 @@ import SetQuantity from "./SetQuantity";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ListRating from "./ListRating";
 import AddRating from "./AddRating";
-import { User } from "@prisma/client";
-import { log } from "console";
 
 interface ProductDetailsProps {
   product: any;
@@ -105,7 +103,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, user }) => {
   };
   const handleChange = (value: number) => {
     setCartProduct((prev) => {
-      return { ...prev, quantity: value };
+      return {
+        ...prev,
+        quantity: value,
+      };
     });
   };
 
@@ -243,7 +244,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, user }) => {
               <div className={styles["product-details-aside__item"]}>
                 <p className={styles["col1"]}>Discount</p>
                 <p className={`${styles["col2"]} ${styles["fw-semibold"]}`}>
-                  10% (51.29)
+                  10% ({formatPrice(cartProduct.price * 0.1)})
                 </p>
               </div>
               <div className={styles["product-details-aside__item"]}>
@@ -282,13 +283,18 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, user }) => {
                 Sub Total
               </p>
               <p className={`${styles["price"]} ${styles["fw-semibold"]}`}>
-                $126.99
+                {formatPrice(
+                  cartProduct.price - 3.99 - cartProduct.price * 0.1
+                )}
               </p>
             </div>
             <div className={styles["btn-group"]}>
               <button
                 onClick={() => {
-                  handleAddProductToCart(cartProduct);
+                  handleAddProductToCart({
+                    ...cartProduct,
+                    price: cartProduct.price - 3.99 - cartProduct.price * 0.1,
+                  });
                   router.push("/checkout");
                 }}
                 className={`${styles["btn-default"]} ${styles["btn-default-hover"]} ${styles["fw-semibold"]} ${styles["w-full"]} ${styles["active"]}`}
@@ -308,7 +314,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, user }) => {
               ) : (
                 <button
                   className={`${styles["btn-hover"]} ${styles["btn-default-hover"]} ${styles["fw-semibold"]} ${styles["w-full"]} ${styles["padded"]}`}
-                  onClick={() => handleAddProductToCart(cartProduct)}
+                  onClick={() =>
+                    handleAddProductToCart({
+                      ...cartProduct,
+                      price: cartProduct.price - 3.99 - cartProduct.price * 0.1,
+                    })
+                  }
                 >
                   <ShoppingCartIcon />
                   Add to Cart
