@@ -251,6 +251,7 @@ export default function Home() {
                     </div>
 
                     <button
+                      onClick={() => router.push("/shop")}
                       className={`${home["btn-hover"]} ${home["fw-semibold"]}`}
                     >
                       Details
