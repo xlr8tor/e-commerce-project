@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 import ProductCard from "@/components/products/ProductCard";
 import shop from "./page.module.scss";
