@@ -51,8 +51,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, user }) => {
       product.reviews.length) |
     0;
 
-  console.log(productRating);
-
   const [cartProduct, setCartProduct] = useState<CartProductType>({
     id: product.id,
     name: product.name,
