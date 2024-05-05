@@ -14,9 +14,14 @@ npm run dev
 
 ## Accessing Admin Portal
 
-To access the admin portal, use the following credentials:
+To access the admin portal, use the following admin credentials:
 
 - **Email:** ose@gmail.com
+- **Password:** 123456
+
+## Accessing User Portal
+
+- **Email:** peterparker@gmail.com
 - **Password:** 123456
 
 ## Site Hosting
@@ -30,12 +35,16 @@ The site is currently hosted at the following URL:
 To checkout products from your cart and pay, use the following card details:
 
 - **Name:** any name
-- **Location:** any location in the UK or US (the other location details will autofill)
+- **Location:** any location in the UK or US (the other location details will autofill eg. type Vegas and wait 5 secs)
 - **Card Number:** 4242 4242 4242 4242
 - **Expiry Date:** 04/24
 - **CVV:** 444
 
 Please note that the location field will automatically fill in additional details based on the chosen location.
+
+## View Orders
+
+Click on the view orders option in the user profile menu to view users orders
 
 ## Leaving Reviews for Products
 
