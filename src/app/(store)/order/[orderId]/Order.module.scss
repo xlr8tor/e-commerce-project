@@ -44,6 +44,7 @@
   gap: map-get($map: $space, $key: 4);
   font-size: map-get($map: $font-sizes, $key: "font-xs");
   align-items: center;
+  padding-top: map-get($map: $space, $key: 2);
   border-top: $base-border-thickness solid
     map-get($map: $colors, $key: "slate-200");
 

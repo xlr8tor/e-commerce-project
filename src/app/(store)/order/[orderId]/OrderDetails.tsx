@@ -83,7 +83,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
         >
           Products ordered
         </h2>
-        <div className={styles["grid"]}>
+        <div className={`${styles["grid"]}`}>
           <div className={`${styles["col-span"]} ${styles["start"]}`}>
             PRODUCT
           </div>

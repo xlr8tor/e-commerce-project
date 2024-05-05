@@ -15,7 +15,7 @@ const OrderItem: React.FC<OrderItemProps> = ({ item }) => {
       <div className={styles["order-item__wrap"]}>
         <div className={styles["order-item-img__wrap"]}>
           <Image
-            src={`/img/shop/${item.selectedImg.image}`}
+            src={`${item.selectedImg.image}`}
             alt={item.name}
             fill
             className={styles["img"]}
