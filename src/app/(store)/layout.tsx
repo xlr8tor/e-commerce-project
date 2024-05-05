@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Dziram Maxwell",
     default: "Dziram Maxwell Dashboard",
   },
-  description: "Home Page of Dziram Maxwell",
+  description: "%s Page of Dziram Maxwell",
   authors: { name: "Jeremiah Charles" },
   keywords: ["Fashion", "Style", "Clothes"],
   metadataBase: new URL(

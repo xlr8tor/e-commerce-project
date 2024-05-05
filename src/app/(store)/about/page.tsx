@@ -1,7 +1,11 @@
 import about from "@/app/(store)/about/page.module.scss";
 import Image from "next/image";
-import { Suspense } from "react";
-import Loading from "../loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Page",
+  description: "About",
+};
 
 const AboutPage = () => {
   const Records: { title: string; subTitle: string }[] = [

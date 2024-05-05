@@ -1,9 +1,15 @@
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 import ProductCard from "@/components/products/ProductCard";
 import shop from "./page.module.scss";
 import getProducts, { IProductParams } from "@/actions/getProducts";
 import NullData from "@/components/NullData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Shop Page",
+  description: "Shop",
+};
 
 interface ShopPageProps {
   searchParams: IProductParams;
