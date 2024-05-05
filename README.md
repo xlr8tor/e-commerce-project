@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js E-Commerce Project
 
-## Getting Started
+Welcome to Dziram Maxwell project! This markdown file contains important information for running the project and accessing its features.
 
-First, run the development server:
+## Run the project locally
+
+1. Navigate to the project directory.
+2. Run the following commands:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Accessing Admin Portal
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To access the admin portal, use the following credentials:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Email:** ose@gmail.com
+- **Password:** 123456
 
-## Learn More
+## Site Hosting
 
-To learn more about Next.js, take a look at the following resources:
+The site is currently hosted at the following URL:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Next.js E-Commerce Project](https://e-commerce-project-nu-lovat.vercel.app)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Checking Out Products
 
-## Deploy on Vercel
+To checkout products from your cart and pay, use the following card details:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Name:** any name
+- **Location:** any location in the UK or US (the other location details will autofill)
+- **Card Number:** 4242 4242 4242 4242
+- **Expiry Date:** 04/24
+- **CVV:** 444
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Please note that the location field will automatically fill in additional details based on the chosen location.
+
+## Leaving Reviews for Products
+
+In order to leave a review for products, they must be marked as delivered on the admin portal. Once a product is marked as delivered, customers can then leave reviews for it.
+
+Thank you for using our Next.js E-Commerce project!
