@@ -3,6 +3,11 @@ import Image from "next/image";
 import "../globals.css";
 import home from "./page.module.scss";
 import { useRouter } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home Page",
+};
 
 export const revalidate = 0;
 
